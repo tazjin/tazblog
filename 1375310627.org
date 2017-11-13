@@ -1,5 +1,7 @@
 #+TITLE: The NSA's 5 zettabytes of data
-#+AUTHOR: Vincent Ambo <mail@tazj.in>
+#+AUTHOR: Vincent Ambo
+#+EMAIL: blog@tazj.in
+#+DATE: <2013-07-31 Wed>
 
 I've been reading a few discussions on Reddit about the new NSA data
 centre that is being built and stumbled upon
