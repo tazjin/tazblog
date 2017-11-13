@@ -1,0 +1,69 @@
+#+TITLE: The end of dynamic languages?
+#+AUTHOR: Vincent Ambo
+#+EMAIL: blog@tazj.in
+#+DATE: <2015-11-24 Tue>
+
+An [[http://elbenshira.com/blog/the-end-of-dynamic-languages/][excellent article]] about why static types are /necessary/ for successful,
+large projects has appeared on [[https://www.reddit.com/r/programming/comments/3u0by5/the_end_of_dynamic_languages/][/r/programming]].
+
+This article is very on-point about most things. It brought back
+memories of struggling with exactly the same kinds of problems as the
+author describes in languages like Clojure.
+
+The new generation of statically typed languages with proper type
+inference is simply /objectively/ better, mathematics can not be argued
+with - and if you get the correctness benefits without having to
+explicitly type your code (Thanks Hindley & Milner!) then what reason is
+there to not use them?
+
+Or so you would think. The author makes this hopelessly optimistic
+prediction:
+
+#+BEGIN_QUOTE
+  This is my bet: the age of dynamic languages is over. There will be no
+  new successful ones.
+#+END_QUOTE
+
+Unfortunately this is where he collides with reality and with what I
+call "the rampant anti-intellectualism" of the IT industry.
+
+#+CAPTION: Credit to Cartesian Closed Comic
+[[http://i.imgur.com/ZOuf9hg.png]]
+
+There are two main types of dynamic language users:
+
+1. The ones who have never used a proper statically typed language with
+   type inference. This is an interesting group. They are often happy in
+   their dynamically typed world, and their experience with types is
+   limited to languages like Java which - let's be honest - don't make
+   the use of types either particularly nice /or/ helpful. It is
+   possible to get them to use statically typed languages by showing
+   them that you don't /need/ to have any overhead, and that in fact the
+   correctness guaranteed by the compiler will make you /more/
+   productive. (Computers are better at being strict than humans,
+   afterall). However this takes a lot of time.
+
+2. The anti-intellectualists - people who run around constantly
+   defending simply /bad/ languages, such as JavaScript, and who get
+   angry when you begin pointing out the flaws in their language. These
+   are the people who dismiss every argument based in computer science
+   or mathematics with "I never needed /that stuff/ at work" and who
+   constantly say "but look, so many companies are using =$thing= and it
+   works /just fine!/" (trust me, it doesn't). At the same time they
+   walk around and call themselves geeks and/or nerds.
+
+Group 1 is usually not very engaged in the debate and it is possible to
+reason with them. Group 2 is extremely vocal and prefers to loudly
+ridicule and/or ignore arguments for valuing software correctness.
+
+Group 2 is also insanely productive, they produce framework after
+framework, more build tools than can be counted and a neverending stream
+of fundamental tutorials with varying degrees of minor inaccuracy. All
+this is very easy to do when you don't have to concern yourself with
+correctness.
+
+The problem with that is that the flood of things produced by them
+overshadows the limited efforts of the other side. Until that changes I
+don't see an easy way for us to get out of this mess.
+
+Go forth and write correct, statically-typed code!
