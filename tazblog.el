@@ -41,7 +41,7 @@
    ("1476807384" "make-object-t-again")
    ("1486830338" "reversing-watchguard-vpn")))
 
-(defun legacy-link-handler (httpcon)
+(defun tazblog-legacy-link-handler (httpcon)
   "Redirect legacy links (/en/{article-id}) to new format (/{article-name})."
   (letrec ((legacy-id (elnode-http-mapping httpcon 1))
            (article-name (ht-get tazblog-legacy-ids legacy-id)))
@@ -50,4 +50,4 @@
      httpcon (concat "/" (or article-name "not-found")))))
 
 (setq elblog-additional-routes
-      '(("^.*//en/\\(.*\\)$" . legacy-link-handler)))
+      '(("^.*//en/\\(.*\\)$" . tazblog-legacy-link-handler)))
