@@ -1,0 +1,14 @@
+#+TITLE: Kubernetes presentation reloaded
+#+AUTHOR: Vincent Ambo
+#+EMAIL: blog@tazj.in
+#+DATE: <2016-07-02 Sat>
+
+After my last [[https://tazj.in/en/1448315026][Kubernetes presentation]]
+I gave one that was actually recorded. In my opinion Kubernetes is the
+best way to orchestrate container infrastructure at the moment and I
+whole-heartedly recommend everyone to look into it.
+
+The video is available [[https://www.youtube.com/watch?v=GjkJ9P5yNPU][here]].
+
+/Update 2017-11-13:/ Note that the presentation uses Kubernetes concepts
+that are now outdated. You may want to find a newer resource.
