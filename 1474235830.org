@@ -1,0 +1,45 @@
+#+TITLE: Fully automated TLS certificates with Kubernetes
+#+AUTHOR: Vincent Ambo
+#+EMAIL: blog@tazj.in
+#+DATE: <2016-09-18 Sun>
+
+Recently one of my favourite ways to tackle an infrastructure issue has
+been to write a Kubernetes controller that deals with the issue.
+
+The idea behind a controller in Kubernetes is quite simple. Your
+Kubernetes API server contains a description of a desired target state.
+To get to that target state, a set of controllers constantly run
+reconciliation loops to take care of whatever small bit of that state is
+their responsibility.
+
+Recently I've wanted to have a fully automated way of retrieving TLS
+certificates from [[https://letsencrypt.org/][Let's Encrypt]]. This
+seemed like a perfect fit for a Kubernetes controller, so I got to work
+and am now presenting *release 1.1* of the
+[[https://github.com/tazjin/kubernetes-letsencrypt/tree/v1.1][*Kubernetes
+Letsencrypt Controller*]].
+
+One feature of Let's Encrypt is their support for DNS-based challenges.
+To verify your domain ownership you add a specific TXT record which is
+validated by Let's Encrypt.
+
+My controller makes use of that feature and currently implements
+validation support for both *Google Cloud DNS* and *Amazon Route53*.
+Head over to the repository's
+[[https://github.com/tazjin/kubernetes-letsencrypt/blob/v1.1/README.md][README]]
+for details on how to set it up.
+
+Basically the process to get a certificate is now as simple as:
+
+1. Add an annotation =acme/certificate: www.mydomain.com= to any of your
+   =Service= resources.
+2. Wait a few minutes until you find your certificate in a =Secret=
+   resource called =www-mydomain-com-tls=.
+3. That's it!
+
+This way you don't have to deal with routing temporary challenge URLs on
+your webserver or any of that stuff. It just works!
+
+Feedback (and
+[[https://github.com/tazjin/kubernetes-letsencrypt/issues][contributions]]!)
+are very welcome.
