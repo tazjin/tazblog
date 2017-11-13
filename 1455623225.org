@@ -1,0 +1,17 @@
+#+TITLE: Servant presentation
+#+AUTHOR: Vincent Ambo
+#+EMAIL: blog@tazj.in
+#+DATE: <2016-02-16 Tue>
+
+A few weeks back I did a short presentation on servant, a Haskell
+library for defining web APIs at the type level, at the Oslo Haskell
+meetup.
+
+Just in case somebody is interested you can grab the
+[[https://git.tazj.in/tazjin/servant-presentation][slides]] and watch
+the [[https://vimeo.com/153901805][video]].
+
+The project presented in the slides, a little API for finding pubs in
+Oslo, lives [[https://git.tazj.in/tazjin/pubkartet][here]]. I haven't
+heard back from Untappd about an API key yet so things are a bit slow on
+that front.
