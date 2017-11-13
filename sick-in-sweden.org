@@ -23,5 +23,5 @@ with Sweden's rather mediocre healthcare system you end up constantly
 being surrounded by sick people, not just in your own office but also on
 public transport and basically all other public places.
 
-Oh and the best thing about this? Swedish politicians [[https://www.aftonbladet.se/nyheter/article10506886.ab][often ignore this
-]]rule and just don't report their sick days. Nice.
+Oh and the best thing about this? Swedish politicians
+[[https://www.aftonbladet.se/nyheter/article10506886.ab][often ignore this]] rule and just don't report their sick days. Nice.
