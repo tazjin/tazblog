@@ -1,0 +1,60 @@
+#+TITLE: Masterless Puppet skeleton
+#+AUTHOR: Vincent Ambo
+#+EMAIL: blog@tazj.in
+#+DATE: <2015-11-23 Mon>
+
+At [[http://nordcloud.com/][Nordcloud]] we frequently set up
+configuration management infrastructure for customers, the common tools
+obviously being Puppet, Ansible and so forth.
+
+The traditional way to set up a Puppet environment is based around a
+central Puppet master on which the manifests are placed. This master
+compiles the Puppet catalogue which is then fetched by the nodes.
+
+Authentication between nodes and Puppet master relies on a relatively
+complex certificate infrastructure.
+
+In my opinion many of the features that you get from using a
+Puppetmaster-based setup are not strictly necessary in a lot of
+environments, and the way that it works contradicts how I believe
+configuration management should work in 'cloud'- environments[1].
+
+In those environments it is desirable to have node configuration be
+fully autonomous, such that a node can take care of its own
+configuration without relying on a central system like a Puppet master.
+
+Enter
+[[https://github.com/tazjin/puppet-masterless][puppet-masterless]]: This
+little project is intended as a base skeleton or template for masterless
+Puppet setups. It uses a simple =systemd=-unit and a timer to run on
+scheduled intervals, fetch the latest copy of the git repository
+containing the manifests and install new dependencies with
+[[https://github.com/rodjek/librarian-puppet][librarian-puppet]].
+
+There's detailed documentation for getting you started in the
+repository, have a look and maybe you'll find yourself using it on a
+project in the future.
+
+Basic features:
+
+-  Puppet manifests are fetched automatically from a remote git
+   repository, every machine running Puppet does this on its own.
+-  =Puppetfile= support for installing dependencies through
+   =librarian-puppet=
+-  [[http://docs.puppetlabs.com/hiera/1/][Hiera]] support out of the box
+   for class assignment and class variables
+-  integrated with =systemd= for reliable scheduling and getting
+   information from runs
+
+Lots of time in IT is spent doing the same tasks over and over again, so
+if this saves anyone the time for setting up a base Puppet setup - goal
+accomplished.
+
+Strictly speaking I'll be using it in the future, so success is (for
+once!) guaranteed.
+
+--------------
+
+[1] - By cloud-environment I mean any kind of environment that can be
+considered 'elastic', for example nodes being created and destroyed at
+any time based on load.
